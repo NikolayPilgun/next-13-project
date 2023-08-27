@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.main {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #2e00a6;
+	color: aliceblue;
+}
+.header {
+	background: -webkit-linear-gradient(
+		180deg,
+		#ffe140,
+		#ffe140,
+		#ffe140,
+		#2e00a6
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		180deg,
+		#ffe140,
+		#ffe140,
+		#ffe140,
+		#2e00a6
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.footer {
+	background: -webkit-linear-gradient(
+		90deg,
+		#2e00a6,
+		#f8ff40,
+		#2e00a6
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		90deg,
+		#2e00a6,
+		#f8ff40,
+		#2e00a6
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media screen and (max-width: 640px) {
+	.footer {
+		background: #ffe140;
+	}
+}
