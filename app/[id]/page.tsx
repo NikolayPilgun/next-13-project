@@ -2,21 +2,11 @@ import { IPost } from "@/components/BlockWithPosts";
 import { Metadata } from "next";
 import Image from "next/image";
 
-export async function generateMetadata({
-	params: { id },
-}: Props): Promise<Metadata> {
-	const postMeta = await getData(id);
-	return {
-		title: postMeta.title,
-	};
-}
-
 type Props = {
 	params: {
 		id: string;
 	};
 };
-
 async function getData(id: string): Promise<IPost> {
 	const response = await fetch(`http://localhost:3004/posts/${id}`, {
 		next: {
@@ -28,7 +18,16 @@ async function getData(id: string): Promise<IPost> {
 	return response.json();
 }
 
-export default async function myPost({ params: { id } }: Props) {
+export async function generateMetadata({
+	params: { id },
+}: Props): Promise<Metadata> {
+	const postMeta = await getData(id);
+	return {
+		title: postMeta.title,
+	};
+}
+
+export default async function MyPost({ params: { id } }: Props) {
 	const post = await getData(id);
 
 	return (
