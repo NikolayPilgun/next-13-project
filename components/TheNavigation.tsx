@@ -1,4 +1,5 @@
 "use client";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,15 +7,25 @@ import { useState } from "react";
 import PopUp from "./PopUp";
 
 export default function TheNavigation() {
+	const session = useSession();
+	let status = session.status === "unauthenticated" ? false : true;
+	let isLogin = status;
+
 	const menuLink = [
 		{ title: "Главная", href: "/" },
-		{ title: "Создать пост", href: "/createPost" },
+		{ title: "Добавить книгу", href: "/createPost" },
 		{ title: "Зарегистрироваться", href: "/register" },
 	];
 	const pathname = usePathname();
 	const [isOpenPopUp, setIsOpenPopUp] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
-	let isLogin = isOpenPopUp;
+
+	function mySignIn() {
+		setIsOpenPopUp(true);
+	}
+	function mySignOut() {
+		signOut({ callbackUrl: "/" });
+	}
 
 	return (
 		<nav>
@@ -32,12 +43,18 @@ export default function TheNavigation() {
 					</Link>
 				))}
 
-				<button
-					onClick={() => setIsOpenPopUp(true)}
-					className={isLogin ? "signOut" : "signIn"}
-				>
-					{isLogin ? "Выйти" : "Войти"}
-				</button>
+				{isLogin ? (
+					<button onClick={mySignOut} className="signOut">
+						Выйти
+					</button>
+				) : (
+					<button
+						onClick={mySignIn}
+						className={`signIn ${pathname === "/userSignIn" ? " hidden" : ""}`}
+					>
+						Войти
+					</button>
+				)}
 			</div>
 			{/* Mobile Navigation */}
 			<div className="sm:hidden flex relative">
@@ -73,12 +90,20 @@ export default function TheNavigation() {
 								{link.title}
 							</Link>
 						))}
-						<button
-							onClick={() => setIsOpenPopUp(true)}
-							className={`mt-5 ${isLogin ? "signOut" : "signIn"}`}
-						>
-							{isLogin ? "Выйти" : "Войти"}
-						</button>
+						{isLogin ? (
+							<button onClick={mySignOut} className="signOut">
+								Выйти
+							</button>
+						) : (
+							<button
+								onClick={mySignIn}
+								className={`signIn ${
+									pathname === "/userSignIn" ? " hidden" : ""
+								}`}
+							>
+								Войти
+							</button>
+						)}
 					</div>
 				)}
 			</div>

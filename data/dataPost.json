@@ -77,5 +77,35 @@
       "picture": "/pictures/books/book2.jpg",
       "id": 11
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "bill",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "lol",
+      "password": "123",
+      "name": "Вася",
+      "email": "skdj@dj.com",
+      "image": "sos"
+    },
+    {
+      "id": 3,
+      "username": "any",
+      "password": "123"
+    },
+    {
+      "username": "www",
+      "password": "111",
+      "id": 4
+    },
+    {
+      "username": "qqq",
+      "password": "qqq",
+      "id": 5
+    }
   ]
 }

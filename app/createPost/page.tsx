@@ -2,7 +2,7 @@ import TheCreatePost from "@/components/TheCreatePost";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Next Create Post",
+	title: "Добавить книгу",
 };
 
 export default function CreatePost() {

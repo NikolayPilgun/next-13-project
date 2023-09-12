@@ -1,3 +1,4 @@
+import { Providers } from "@/components/Providers";
 import TheFooter from "@/components/TheFooter";
 import TheHeader from "@/components/TheHeader";
 import type { Metadata } from "next";
@@ -19,9 +20,11 @@ export default function RootLayout({
 	return (
 		<html lang="ru">
 			<body className={inter.className}>
-				<TheHeader />
-				<main className="main">{children}</main>
-				<TheFooter />
+				<Providers>
+					<TheHeader />
+					<main className="main">{children}</main>
+					<TheFooter />
+				</Providers>
 			</body>
 		</html>
 	);

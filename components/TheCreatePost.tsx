@@ -30,7 +30,6 @@ export default function TheCreatePost() {
 	} = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
 
 	async function createUserBook(data: FormSchema) {
-		console.log(data);
 		await fetch("http://localhost:3004/posts", {
 			method: "POST",
 			body: JSON.stringify({

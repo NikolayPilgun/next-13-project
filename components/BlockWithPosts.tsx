@@ -1,3 +1,5 @@
+import { authConfig } from "@/configs/auth";
+import { getServerSession } from "next-auth/next";
 import PostCard from "./PostCard";
 
 export interface IPost {
@@ -19,12 +21,12 @@ async function getData(): Promise<IPost[]> {
 }
 
 export default async function BlockWithPosts() {
-	let isLogin = true;
 	const posts = await getData();
+	const session = await getServerSession(authConfig);
 
 	return (
 		<div className=" my-20">
-			{isLogin ? (
+			{session?.user ? (
 				<div className="flex flex-wrap gap-14 justify-center items-center">
 					{posts.map((post: IPost) => (
 						<PostCard
@@ -37,7 +39,7 @@ export default async function BlockWithPosts() {
 					))}
 				</div>
 			) : (
-				<h3>
+				<h3 className=" text-2xl my-12 py-5 bg-red-300">
 					Зарегистрируйтесь или войдите в свою учётную запись чтобы увидеть
 					содержимое
 				</h3>
