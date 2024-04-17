@@ -1,42 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Header](https://github.com/NikolayPilgun/Portfolio/blob/main/src/data/dataImg/nextProject/nextProject1.svg)](https://nikolaypilgun.ru/popularBooks)
 
-## Getting Started
+# Вид сайта — Информационный сайт / Блог. Тема — Популярные книги (блог).
 
-First, run the development server:
+## Данный проект является тренировочным.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Полностью разработан и реализован [NikolayPilgun](https://github.com/NikolayPilgun).
+
+## Технологии:
+
+- [React](https://ru.legacy.reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Json-server](https://github.com/typicode/json-server)
+- [Zod](https://zod.dev/)
+
+### Требования
+
+Для установки и запуска проекта, необходим:
+
+- [NodeJS](https://nodejs.org/)
+- [json-server](https://www.npmjs.com/package/json-server)
+
+### Установка зависимостей.
+
+Для установки зависимостей выполните команду.
+
+```sh
+$ npm i
 ```
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Чтобы получить данные из Data файла нужно запустить
-JSON Server
+### Запуск Development сервера.
 
+Чтобы запустить сервер для разработки, выполните команду.
+
+```sh
+npm run dev
+```
+
+### Запуск json-server сервера.
+
+Для запуска json-сервера сначала перейдите в папку.
+
+```sh
 cd data
-json-server --watch dataPost.json --port 3004
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Запустите json-сервер с помощью команды.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npx json-server --watch dataPost.json --port 3004
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Дополнительная информация
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Выбор технологии и инструментов для реализации данного проекта может быть не самым оптимальным.
+Данный выбор служит для отработки навыков, используемых технологий и инструментов.
