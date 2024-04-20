@@ -1,6 +1,6 @@
 [![Header](https://github.com/NikolayPilgun/Portfolio/blob/main/src/data/dataImg/nextProject/nextProject1.svg)](https://nikolaypilgun.ru/popularBooks)
 
-# Вид сайта — Информационный сайт / Блог. Тема — Популярные книги (блог).
+# Тип сайта — Информационный сайт / Блог. Тема — Популярные книги (блог).
 
 ## Данный проект является тренировочным.
 
